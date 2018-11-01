@@ -22,3 +22,9 @@ export const getAllPosts = () =>
   fetch(`${api}/posts`, { headers })
     .then(res => res.json())
     .then(data => data)
+
+// Get all of the posts.
+export const getPostsByCategory = (id) =>
+  fetch(`${api}/${id}/posts`, { headers })
+    .then(res => res.json())
+    .then(data => data)
