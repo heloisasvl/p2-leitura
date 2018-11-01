@@ -6,8 +6,8 @@ class Post extends Component {
 
     return (
       <div className="post">
-        <div className="post-title">{post.title}</div>
-        <div className="post-authors">{post.authors ? post.authors.join(', '): ''}</div>
+        <div className="post-title">Title: {post.title}</div>
+        <div className="post-author">Author: {post.author}</div>
       </div>
     )
   }
