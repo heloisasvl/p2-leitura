@@ -21,7 +21,7 @@ class Header extends Component {
         <ul className="header-categories">
           <li>
             <Link to={'/'}>
-              All
+              All Categories
             </Link>
           </li>
           {categories.map((category, index) => (
