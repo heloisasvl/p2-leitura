@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { fetchPosts } from '../actions';
 
+import Posts from '../components/Posts'
+
 import './App.css';
 
 class App extends Component {
@@ -15,7 +17,9 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App"></div>
+      <div className="App">
+        <Posts posts={this.props.posts} />
+      </div>
     );
   }
 }
