@@ -15,7 +15,9 @@ const posts = (state = initialState, action) => {
     case RECEIVE_POSTS:
       return Object.assign({}, state, {
         isFetching: false,
-        posts: action.posts
+        posts: action.posts.filter(item => {
+          return !item.deleted // Marcado se o post foi 'deletado' (sem acesso no front end), (default: false)
+        })
       })
     default:
       return state
