@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { connect } from "react-redux";
 import { fetchCategories } from '../actions';
 
@@ -18,20 +18,21 @@ class Header extends Component {
 
     return (
       <div className="header">
-        <ul className="header-categories">
-          <li>
-            <Link to={'/'}>
-              All Categories
-            </Link>
-          </li>
-          {categories.map((category, index) => (
-            <li key={category.path}>
-              <Link to={`/${category.path}`}>
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+          <Link className="navbar-brand" to={'/'}>
+            Leitura
+          </Link>
+        </nav>
+
+        <div className="nav-scroller bg-white shadow-sm">
+          <nav className="nav nav-underline">
+            {categories.map((category, index) => (
+              <NavLink className="nav-link" key={category.path} to={`/${category.path}`}>
                 {category.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
+              </NavLink>
+            ))}
+          </nav>
+        </div>
       </div>
     );
   }

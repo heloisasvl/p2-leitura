@@ -25,14 +25,13 @@ class Category extends Component {
   }
 
   render() {
-    const { posts, match } = this.props
+    const { posts } = this.props
 
     return (
       <div className="category">
-        <div className="category-header">{match.params.id}</div>
-        <div className="category-content">
+        <main className="container-fluid">
           <Posts posts={posts} />
-        </div>
+        </main>
       </div>
     )
   }

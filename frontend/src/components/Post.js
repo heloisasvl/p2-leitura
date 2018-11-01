@@ -6,8 +6,12 @@ class Post extends Component {
 
     return (
       <div className="post">
-        <div className="post-title">Title: {post.title}</div>
-        <div className="post-author">Author: {post.author}</div>
+        <div className="media text-muted pt-3">
+          <p className="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+            <strong className="d-block text-gray-dark">{post.author}</strong>
+            {post.title}
+          </p>
+        </div>
       </div>
     )
   }

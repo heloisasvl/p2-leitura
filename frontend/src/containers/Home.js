@@ -19,7 +19,9 @@ class Home extends Component {
 
     return (
       <div className="home">
-        <Posts posts={posts} />
+        <main className="container-fluid">
+          <Posts posts={posts} />
+        </main>
       </div>
     );
   }

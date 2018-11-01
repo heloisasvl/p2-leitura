@@ -8,13 +8,9 @@ class Posts extends Component {
 
     return (
       <div className="posts">
-        <ul className="posts-list">
-          {posts.map((post, index) => (
-            <li className="posts-list-item" key={post.id}>
-              <Post post={post} />
-            </li>
-          ))}
-        </ul>
+        {posts.map((post, index) => (
+          <Post key={post.id} post={post} />
+        ))}
       </div>
     )
   }
