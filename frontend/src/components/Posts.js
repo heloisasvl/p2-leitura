@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 
 import Post from './Post'
 
-class PostList extends Component {
+class Posts extends Component {
   render() {
     const { posts } = this.props
 
     return (
-      <ul className="postList">
+      <ul className="posts">
         {posts.map((post, index) => (
           <li key={post.id}>
             <Post post={post} />
@@ -18,4 +18,4 @@ class PostList extends Component {
   }
 }
 
-export default PostList;
+export default Posts;
