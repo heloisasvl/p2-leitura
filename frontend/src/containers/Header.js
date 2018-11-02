@@ -18,7 +18,7 @@ class Header extends Component {
 
     return (
       <div className="header">
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <Link className="navbar-brand" to={'/'}>
             Leitura
           </Link>
@@ -27,7 +27,7 @@ class Header extends Component {
         <div className="nav-scroller bg-white shadow-sm">
           <nav className="nav nav-underline">
             {categories.map((category, index) => (
-              <NavLink className="nav-link" key={category.path} to={`/${category.path}`}>
+              <NavLink className="nav-link" key={category.path} to={`/c/${category.path}`}>
                 {category.name}
               </NavLink>
             ))}

@@ -11,7 +11,7 @@ class Category extends Component {
     * imediatamente após uma atualização de Category
     */
   componentDidMount() {
-    this.props.fetchPostsByCategory(this.props.match.params.id);
+    this.props.fetchPostsByCategory(this.props.match.params.categoryId);
   }
 
   /**
@@ -19,16 +19,22 @@ class Category extends Component {
     * imediatamente após uma atualização de Category
     */
   componentDidUpdate(prevProps) {
-    if (this.props.match.params.id !== prevProps.match.params.id) {
-      this.props.fetchPostsByCategory(this.props.match.params.id);
+    if (this.props.match.params.categoryId !== prevProps.match.params.categoryId) {
+      this.props.fetchPostsByCategory(this.props.match.params.categoryId);
     }
   }
 
   render() {
-    const { posts } = this.props
+    const { posts, match } = this.props
 
     return (
       <div className="category">
+        <div className="jumbotron jumbotron-fluid py-4">
+          <div className="container-fluid">
+            <h1 className="display-5">c/{match.params.categoryId}</h1>
+            <p>Idêntica à view padrão, mas filtrada para incluir somente postagens com a categoria selecionada</p>
+          </div>
+        </div>
         <main className="container-fluid">
           <Posts posts={posts} />
         </main>
@@ -45,7 +51,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchPostsByCategory: (id) => dispatch(fetchPostsByCategory(id))
+    fetchPostsByCategory: (categoryId) => dispatch(fetchPostsByCategory(categoryId))
   }
 }
 

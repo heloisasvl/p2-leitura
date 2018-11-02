@@ -28,3 +28,15 @@ export const getPostsByCategory = (id) =>
   fetch(`${api}/${id}/posts`, { headers })
     .then(res => res.json())
     .then(data => data)
+
+// Get the details of a single post.
+export const getPost = (id) =>
+  fetch(`${api}/posts/${id}`, { headers })
+    .then(res => res.json())
+    .then(data => data)
+
+// Get all of the posts.
+export const getComments = (id) =>
+  fetch(`${api}/posts/${id}/comments`, { headers })
+    .then(res => res.json())
+    .then(data => data)

@@ -1,16 +1,25 @@
-import React, { Component} from 'react'
+import React, { Component} from 'react';
+import { Link } from 'react-router-dom';
 
 class Post extends Component {
   render() {
     const { post } = this.props
 
     return (
-      <div className="post">
-        <div className="media text-muted pt-3">
-          <p className="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-            <strong className="d-block text-gray-dark">{post.author}</strong>
-            {post.title}
-          </p>
+      <div className="post mb-3">
+        <div className="card">
+          <div className="card-body">
+            <span className="badge badge-light mb-2">c/{post.category}</span>
+            <h4 className="card-title">
+              <Link key={post.id} to={`/c/${post.category}/p/${post.id}`}>
+                {post.title}
+              </Link>
+            </h4>
+            <p className="card-text">{post.body}</p>
+          </div>
+          <div className="card-footer">
+            <small className="text-muted">Posted on {post.timestamp} by {post.author}</small>
+          </div>
         </div>
       </div>
     )

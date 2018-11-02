@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import Header from './Header'
 import Home from './Home'
 import Category from './Category'
+import Single from './Single'
 
 class App extends Component {
   render() {
@@ -11,7 +12,8 @@ class App extends Component {
       <div className="App">
         <Header />
         <Route exact path="/" component={Home} />
-        <Route exact path="/:id" component={Category} />
+        <Route exact path="/c/:categoryId" component={Category} />
+        <Route exact path="/c/:categoryId/p/:postId" component={Single} />
       </div>
     );
   }
