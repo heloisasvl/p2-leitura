@@ -1,0 +1,10 @@
+/* Post */
+.post {}
+.post__votes {
+  display: inline-block;
+  float: right;
+}
+.post__votes .btn {
+  padding-top: 0;
+  padding-bottom: 0;
+}
