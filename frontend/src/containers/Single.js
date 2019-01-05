@@ -28,7 +28,7 @@ class Single extends Component {
           </div>
         </div>
         <div className="container-fluid">
-          <p>{post.body}</p>
+          <p className="pb-2">{post.body}</p>
           <Comments comments={comments} />
         </div>
       </div>

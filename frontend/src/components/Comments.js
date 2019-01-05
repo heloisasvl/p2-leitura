@@ -8,9 +8,9 @@ class Comments extends Component {
     	<div className="comments">
     		<h5>{comments.length} Comentario(s)</h5>
         {comments.map((comment, index) => (
-          <div className="media" key={comment.id}>
+          <div className="media py-2" key={comment.id}>
             <div className="media-body">
-              <h5 className="mt-0">{comment.author}</h5>
+              <h6>{comment.author} <small><i>Posted on {comment.timestamp}, vote {comment.voteScore}</i></small></h6>
               {comment.body}
             </div>
           </div>
